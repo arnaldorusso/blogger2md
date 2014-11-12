@@ -71,7 +71,11 @@ def process_entry(entry):
  
     title = entry.xpath('atom:title[@type="text"]',
             namespaces=namespaces)[0]
-    title = title.text.strip().replace('\n', ' ')
+    
+    #import ipdb 
+    #ipdb.set_trace() 
+    title = str(title)
+    title = title.strip().replace('\n', ' ')
     title = re.sub(' +', ' ', title)
  
     published = entry.xpath('atom:published', namespaces=namespaces)[0].text
