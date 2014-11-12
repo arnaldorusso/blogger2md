@@ -1,27 +1,30 @@
 blogger2md
 ==========
 
-Convert entire blogger [.atom files] to a MarkDown output of each post.
+Given a Blogger export in xml atom format, `blogger2md` converts each
+blog post into markdown. A `.md` file is created for each post.
 
 ## Usage
-    python blogger2md.py --output-dir your/directory/ --html2text blogger_file.atom
+    python blogger2md.py --output-dir your/directory/ --html2text blogger_file.xml
 
-or get help:
+### Help
 
-    python blogger2md.py --help
-    [-h] [--online] [--pandoc] [--html2text]
-    [--output-dir OUTPUT_DIR]
-    input
+~~~ sh
+$ python blogger2md.py --help
+usage: blogger2md.py [-h] [--online] [--pandoc] [--html2text]
+                     [--output-dir OUTPUT_DIR]
+                     input
 
-    positional arguments:
-    input
+positional arguments:
+  input
 
-    optional arguments:
-      -h, --help            show this help message and exit
-      --online, --fuckyeah
-      --pandoc
-      --html2text
-      --output-dir OUTPUT_DIR, -d OUTPUT_DIR
+optional arguments:
+  -h, --help            show this help message and exit
+  --online, --fuckyeah
+  --pandoc
+  --html2text
+  --output-dir OUTPUT_DIR, -d OUTPUT_DIR
+~~~
 
 ## Credits
-This code is based on [Larsks Script](https://gist.github.com/larsks/4022537)
+This code is based on a [script by @larsks](https://gist.github.com/larsks/4022537).
