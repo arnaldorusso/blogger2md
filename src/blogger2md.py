@@ -120,8 +120,11 @@ def update_content(entry):
     r = requests.get(entry['href'])
     doc = etree.fromstring(r.content,
             parser = etree.HTMLParser())
-    content = CSSSelector('div.entry-content')(doc)[0]
-    entry['content'] = etree.tostring(content)
+    try:
+        content = CSSSelector('div.entry-content')(doc)[0]
+        entry['content'] = etree.tostring(content)
+    except IndexError:
+        entry['content'] = "Content Unavailable"
  
 def write_entry(entry, data, opts):
     # Write xml data to posts/slug.xml.
